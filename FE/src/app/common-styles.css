@@ -1,0 +1,49 @@
+.large-header-icon {
+    width: 20px;
+    height: 20px;
+    fill: #707070;
+}
+
+.medium-header-icon {
+    width: 16px;
+    height: 16px;
+    fill: #707070;
+}
+
+.small-header-icon {
+    width: 14px;
+    height: 14px;
+    fill: #707070;
+}
+
+.extra-small-header-icon {
+    width: 8px;
+    height: 13px;
+    fill: #707070;
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.p3b {
+    padding-bottom: 3px;
+}
+
+.text {
+    font-family: "Segoe UI Variable Text", "Segoe UI", Arial, sans-serif;
+    font-size: 12px;
+    color: #666;
+}
+
+.text-small {
+    font-family: "Segoe UI Variable Text", "Segoe UI", Arial, sans-serif;
+    font-size: 10px;
+    color: #666;
+}
+
+.text-medium {
+    font-family: "Segoe UI Variable Text", "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+    color: #666;
+}

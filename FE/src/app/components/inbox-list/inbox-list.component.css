@@ -1,0 +1,71 @@
+@import '../../common-styles.css';
+.inbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 524px;
+    width: 409px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background-color: #f5f6f6;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    .inbox-header-wrapper {
+        padding: 8px 16px 0;
+        .inbox-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width:100%;
+            .inbox-header-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                .by-date-container {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    height: 15px;
+                }
+            }
+            .inbox-header-right {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                width: 115px;
+                .sync-container {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+    .inbox-list-content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 6px;
+        height: 524px;
+        overflow: auto;
+        border-bottom-left-radius: 30px;
+    }
+
+    .state-message {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+        color: #999;
+        min-height: 100px;
+    }
+
+    .state-message.error {
+        color: #d32f2f;
+        background-color: #ffebee;
+        border-radius: 8px;
+    }
+}

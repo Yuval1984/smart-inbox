@@ -5,7 +5,7 @@ import Controller from './interfaces/controller.interface';
 
 class App {
     app: Application = express();
-    port = process.env.PORT || 3000;
+    port = process.env.PORT;
 
     constructor(controllers: Controller[]) {
         this.initializeMiddleware();

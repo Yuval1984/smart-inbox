@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+body {
+    background-color: #f5f6f6;
+}
+
+/* WebKit browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  /* completely hide all scrollbar buttons */
+  ::-webkit-scrollbar-button {
+    background: transparent;
+    background-image: none;
+    background-color: transparent;
+    height: 0;
+    width: 0;
+  }
+  
+  ::-webkit-scrollbar-button:start {
+    background: transparent;
+    height: 0;
+    width: 0; 
+  }
+  
+  ::-webkit-scrollbar-button:end {
+    background: transparent;
+    height: 0;
+    width: 0;
+  }
+  
+  ::-webkit-scrollbar-track-piece {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: linear-gradient(to bottom, #f6f7f7, #f2f2f2);
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #d0d0d0;
+    border-radius: 10px;
+    border: 2px solid #f4f4f4;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #bcbcbc;
+  }

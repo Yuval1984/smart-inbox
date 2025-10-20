@@ -1,0 +1,50 @@
+<mat-card class="inbox-list">
+  <mat-card-header class="inbox-header-wrapper">
+    <div class="inbox-header">
+      <div class="inbox-header-left">
+        <mat-icon svgIcon="menu" class="large-header-icon"></mat-icon>
+        <mat-icon
+          svgIcon="arrow-down"
+          class="extra-small-header-icon rotate-180"
+        ></mat-icon>
+        <div class="by-date-container">
+          <mat-icon
+            svgIcon="grey-chevron-down"
+            class="extra-small-header-icon"
+          ></mat-icon>
+          <span class="text-medium p3b">By Date</span>
+        </div>
+      </div>
+      <div class="inbox-header-right">
+        <div class="sync-container">
+          <mat-icon svgIcon="sync" class="small-header-icon"></mat-icon>
+          <span class="text-medium p3b">8 min. ago</span>
+        </div>
+        <mat-icon svgIcon="minimize" class="large-header-icon"></mat-icon>
+      </div>
+    </div>
+  </mat-card-header>
+  <mat-card-content class="inbox-list-content">
+    <!-- Loading State -->
+    <div *ngIf="isLoading" class="state-message">
+      <p class="text">Loading inbox items...</p>
+    </div>
+
+    <!-- Error State -->
+    <div *ngIf="errorMessage && !isLoading" class="state-message error">
+      <p class="text">{{ errorMessage }}</p>
+    </div>
+
+    <!-- Empty State -->
+    <div
+      *ngIf="inboxItems.length === 0 && !isLoading && !errorMessage"
+      class="state-message"
+    >
+      <p class="text">No items in your inbox</p>
+    </div>
+    <!-- Content -->
+    <div *ngFor="let item of inboxItems; trackBy: trackFN" class="inbox-item">
+      <app-inbox-item [item]="item"></app-inbox-item>
+    </div>
+  </mat-card-content>
+</mat-card>

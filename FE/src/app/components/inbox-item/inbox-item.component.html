@@ -1,0 +1,51 @@
+<div class="inbox-item" *ngIf="item">
+  <div class="header">
+    <div class="header-left">
+      <mat-icon
+        svgIcon="icon_labs"
+        *ngIf="item?.type === 'labReport'"
+        class="large-header-icon"
+        aria-label="lab icon"
+      ></mat-icon>
+      <mat-icon
+        svgIcon="message"
+        *ngIf="item?.type === 'freeText'"
+        class="large-header-icon"
+        aria-label="message icon"
+      ></mat-icon>
+      <mat-icon
+        svgIcon="medicine"
+        *ngIf="item?.type === 'renewal'"
+        class="large-header-icon"
+        aria-label="medicine icon"
+      ></mat-icon>
+      <div class="text">
+        {{ item.patientName }}
+      </div>
+    </div>
+    <div class="text-small">
+      {{ item.requestDate | date : "HH:mm MM/dd/yyyy" : "UTC" }}
+    </div>
+  </div>
+  <div class="text">{{ item.description }}</div>
+  <div class="info">
+    <div class="estimated-time">
+      <mat-icon svgIcon="hourglass" class="small-header-icon"></mat-icon>
+      <div class="text">
+        {{ item.estimatedTimeSec | secondsToMinutes }}
+      </div>
+    </div>
+    <div *ngIf="hasLabels()" class="labels">
+      <mat-icon svgIcon="type" class="small-header-icon"></mat-icon>
+      <div class="text" *ngFor="let label of getLabels()">{{ label }}</div>
+    </div>
+    <div *ngIf="hasPanels()" class="panels">
+      <mat-icon svgIcon="icon_labs" class="small-header-icon"></mat-icon>
+      <div class="text" *ngFor="let panel of getPanels()">{{ panel }}</div>
+    </div>
+    <div class="assignment">
+      <mat-icon svgIcon="icon-inbox" class="large-header-icon"></mat-icon>
+      <div class="assignment text">{{ item.assignment.assignedTo }}</div>
+    </div>
+  </div>
+</div>
