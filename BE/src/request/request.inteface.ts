@@ -145,59 +145,25 @@ export interface PatientRequest {
     isRead: boolean;
     isUrgent: boolean;
     estimatedTimeSec: number;
-    assignment: { assignDate: Date; assignedTo: string };
+    assignment: { assignDate: Date; assignedTo: string; grouping?: string };
 }
-export interface RenewalRequest extends PatientRequest {
+export interface InboxRenewalRequest extends PatientRequest {
     type: RequestType.Renewal;
-}
-export interface LabReportRequest extends PatientRequest {
-    type: RequestType.LabReport;
-}
-export interface FreeTextRequest extends PatientRequest {
-    type: RequestType.FreeText;
-}
-
-export interface InboxItemBase {
-    id: string;
-    type: RequestType;
-    status: string;
-    isRead: boolean;
     patientName: string;
-    requestDate: string;
+    status: string;
     lastModifiedDate: string;
-    description: string;
-    estimatedTimeSec: number;
-    assignment: {
-        assignDate: string;
-        assignedTo: string;
-        grouping?: string;
-    };
-    isUrgent: boolean;
 }
-
-export interface InboxRenewalRequest extends InboxItemBase {
-    type: RequestType.Renewal;
-    prescriptionIds: string[];
-    recommendation: {
-        recommendationValue: string;
-        recommendationDescription: string;
-    };
-}
-
-export interface InboxLabReportRequest extends InboxItemBase {
+export interface InboxLabReportRequest extends PatientRequest {
     type: RequestType.LabReport;
-    abnormalResults: string[];
+    patientName: string;
     panels: string[];
 }
-
-export interface InboxFreeTextRequest extends InboxItemBase {
+export interface InboxFreeTextRequest extends PatientRequest {
     type: RequestType.FreeText;
-    labels?: string[];
-    prescriptionIds?: string[];
-    recommendation?: {
-        recommendationValue: string;
-        recommendationDescription: string;
-    };
+    labels: string[];
+    patientName: string;
+    lastModifiedDate: string;
+    status: string
 }
 
 export type InboxItem = InboxRenewalRequest | InboxLabReportRequest | InboxFreeTextRequest;

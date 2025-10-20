@@ -1,4 +1,4 @@
-import { Component, OnInit, DestroyRef, inject, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, DestroyRef, ChangeDetectorRef } from '@angular/core';
 import { InboxItemComponent } from '../inbox-item/inbox-item.component';
 import { RequestService } from '../../services/request.service';
 import { CommonModule, NgClass, NgFor, NgIf } from '@angular/common';
@@ -10,7 +10,15 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 @Component({
   selector: 'app-inbox-list',
   standalone: true,
-  imports: [InboxItemComponent, NgFor, NgIf, NgClass, CommonModule, MatCardModule, MatIconModule],
+  imports: [
+    InboxItemComponent,
+    NgFor,
+    NgIf,
+    NgClass,
+    CommonModule,
+    MatCardModule,
+    MatIconModule
+  ],
   templateUrl: './inbox-list.component.html',
   styleUrl: './inbox-list.component.css',
 })
@@ -19,9 +27,12 @@ export class InboxListComponent implements OnInit {
   isLoading = false;
   errorMessage: string | null = null;
 
-  constructor(private requestService: RequestService, private cd: ChangeDetectorRef, private destroyRef: DestroyRef) { }
+  constructor(
+    private requestService: RequestService,
+    private cd: ChangeDetectorRef,
+    private destroyRef: DestroyRef) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.isLoading = true;
     this.errorMessage = null;
 

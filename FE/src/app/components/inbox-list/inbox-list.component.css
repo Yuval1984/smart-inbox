@@ -51,6 +51,7 @@
         height: 524px;
         overflow: auto;
         border-bottom-left-radius: 30px;
+        scrollbar-gutter: stable;
     }
 
     .state-message {

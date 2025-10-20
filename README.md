@@ -26,7 +26,8 @@ The frontend is a basic Angular project that displays prescription requests in a
 Your task is to implement the following:
 
 1. **Backend Integration**
-  - Use the `request` of `RenewalRequest` interface from
+
+- Use the `request` of `RenewalRequest` interface from
   `fullstack/BE/src/models/dummy1.model.ts`
 - Extend the existing dummy JSON with additional data to ensure the frontend view requires vertical scrolling.
 - Expose this data via an API endpoint for the frontend to fetch.
@@ -41,33 +42,29 @@ Your task is to implement the following:
 - Display a **scrollable vertical list** of requests/messages.
 
 Each list item should include:
+
 - Sender Name
 - Timestamp in format `HH:mm DD/MM/YYYY`
 - Sync Duration (e.g., "1 min.", "5 sec.") – hardcoded
 - Type-based Icon (e.g., lab, text, prescription):
-   -  "type": "labReport" - icon_labs.svg
-   -  "type": "renewal"  - medicine.svg
-   -  "type": "freeText" - message.svg
+  - "type": "labReport" - icon_labs.svg
+  - "type": "renewal" - medicine.svg
+  - "type": "freeText" - message.svg
 - Message Content
 
 > **Note:** Match the reference image layout and formatting as closely as possible.
 
-
-
 ![Inbox UI Example](/fullstack/FE/inbox-notes.png)
 
-
 **Additional Guidelines:**
+
 - Organize UI using Angular components.
 - Use CSS for styling.
 - Icons: Use **Font Awesome**, **Angular Material**, or local `assets/icons` folder.
   Replace unavailable icons with alternatives—don’t spend too much time sourcing exact matches.
 
-
-
 3. **Documenation**
    Document your approach and any assumptions made during implementation by creating CHANGES.md file.
-
 
 ## Notes
 
