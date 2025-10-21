@@ -87,7 +87,6 @@ export class IconRegistryService {
         });
     }
 
-    // Method to register a single custom icon if needed
     registerIcon(iconName: string, iconPath: string): void {
         this.matIconRegistry.addSvgIcon(
             iconName,

@@ -13,6 +13,5 @@ import { IconRegistryService } from './services/icon-registry.service';
 export class AppComponent {
   title = 'FE';
 
-  // Initialize icon registry service
   private iconRegistry = inject(IconRegistryService);
 }
